@@ -1,0 +1,33 @@
+---
+interface Props {
+    title: string;
+}
+const { title } = Astro.props;
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title} | Kevin Brummer</title>
+    </head>
+    <body>
+        <Hero />
+        <Header sticky={true} />
+        <main class="container">
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>
+
+<style></style>

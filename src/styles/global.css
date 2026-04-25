@@ -1,0 +1,150 @@
+:root {
+    --accent: hsl(210, 90%, 55%);
+    --bg: hsl(220, 30%, 10%);
+    --text: hsl(0, 0%, 95%);
+    --muted: hsl(0, 0%, 70%);
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* controls overall page width */
+    margin: 0 auto; /* centers it */
+    padding: 0 20px; /* prevents edge squish on mobile */
+    box-sizing: border-box;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn-secondary:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.btn-ghost {
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.btn-ghost:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.section__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__cards .btn {
+    margin-top: 1.5em;
+}
+
+.card {
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    max-width: 500px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card__image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card__content {
+    padding: 20px;
+}
+
+.card__content h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.card__content p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.card__button {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.section__title {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-size: clamp(1.5rem, 6vw, 3rem);
+}

@@ -1,0 +1,19 @@
+---
+import Card from "./Card.astro";
+---
+
+<section class="section__cards">
+    <h2 class="section__title">Projects</h2>
+    <div class="cards-grid">
+        <Card
+            title="Self-Hosted Home Server Infrastructure"
+            content="Built and operated a self-hosted server running containerized services with Docker, reverse proxy routing, and automated deployments, mirroring production cloud patterns in a local environment."
+            link="/projects/home-server"
+            image_src="/images/home_server_preview.jpg"
+            image_alt="Raspberry Pi Home Server Setup"
+            width={600}
+            height={600}
+        />
+    </div>
+    <a href="#" class="btn btn-secondary">View All</a>
+</section>

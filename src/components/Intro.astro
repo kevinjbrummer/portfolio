@@ -1,0 +1,51 @@
+<section class="intro">
+    <h2 class="section__title">What I Do</h2>
+    <div class="intro__grid">
+        <div class="intro__entry">
+            <h3>Cloud Architecture</h3>
+            <p>
+                Designing and operating scalable AWS-based systems, with a focus
+                on event-driven architecture, cost optimization, and production
+                reliability.
+            </p>
+        </div>
+        <div class="intro__entry">
+            <h3>Data Platforms</h3>
+            <p>
+                Building ETL pipelines and real-time data processing systems for
+                large-scale weather and sensor data.
+            </p>
+        </div>
+        <div class="intro__entry">
+            <h3>Systems Engineering</h3>
+            <p>
+                Leading development and operations of production systems, from
+                infrastructure design to monitoring and delivery.
+            </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .intro__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+        gap: 20px;
+        width: 80%;
+    }
+
+    .intro__entry {
+        padding: 25px;
+    }
+
+    .intro__entry:not(:last-child) {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+</style>

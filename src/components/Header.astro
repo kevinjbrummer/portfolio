@@ -1,0 +1,54 @@
+---
+const { sticky = false } = Astro.props;
+---
+
+<header class={sticky ? "sticky" : ""}>
+    <nav class="navbar">
+        <div class="logo">Kevin Brummer</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/case-studies">Case Studies</a></li>
+            <li><a href="/projects">Projects</a></li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    header.sticky {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        padding: 15px 30px;
+    }
+
+    .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
+    }
+</style>

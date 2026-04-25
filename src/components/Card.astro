@@ -1,0 +1,41 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+    title: string;
+    content: string;
+    link: string;
+    image_src: ImageMetadata | string;
+    image_alt?: string;
+    width: number;
+    height: number;
+}
+
+const {
+    title,
+    content,
+    link,
+    image_src,
+    image_alt = "",
+    width,
+    height,
+} = Astro.props;
+---
+
+<a href={link} class="card">
+    <div class="card__image">
+        <Image
+            src={image_src as ImageMetadata}
+            alt={image_alt}
+            width={width}
+            height={height}
+        />
+    </div>
+
+    <div class="card__content">
+        <h3>{title}</h3>
+        <p>{content}</p>
+        <span class="card__button">View →</span>
+    </div>
+</a>
